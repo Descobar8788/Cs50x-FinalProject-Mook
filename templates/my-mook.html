@@ -1,0 +1,117 @@
+{% extends "main-layout.html" %}
+
+{% block title %}
+    My Mook | Mook
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="../static/css/mook.css">
+
+{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="header-content">
+            <div class="header-info">
+                <h1>My Mook</h1>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="add">
+            <form action="/add_book" method="get">
+                <button>Add Book</button>
+            </form>
+            <form action="/add_movie" method="get">
+                <button class="movie-button">Add Movie</button>
+            </form>
+        </div>
+        
+        <div class="search-tools">
+            <div class="search-bar">
+                <form action="/mymook" method="post" class="bar">
+                    <input autocomplete="off" id="search" name="search" placeholder="Search by title or author / director" type="text">
+                    <button type="submit">Search</button>
+                </form>
+                <form action="/mymook" method="get">
+                    <button>Reload</button>
+                </form>
+            </div>
+            
+        </div>
+        <div class="upp-buttons">
+            <button onClick="hide('movie-card', 'book-card', this.id, 'movies-select')" id="books-select">BOOKS</button>
+            <button onClick="hide('book-card', 'movie-card', this.id, 'books-select')" id="movies-select" class="movie-button">MOVIES</button>
+        </div>
+        <div id="cards" class="cards">
+            {% for mook in mooks %}
+                {% if mook["type"] == "book" %}
+                    <div class="card book book-card" id="book-card">
+                        <div class="card-content">
+                            <form action="/deletemook" method="post">
+                                <div class="delete">
+                                    <input type="hidden" value="{{ mook.id }}" name="qid">
+                                    <button class="delete-button">&#10005;</button>
+                                </div>
+                            </form>
+                            <div class="card-img">
+                                <img src="{{ mook.img }}" alt="">
+                            </div>
+                            <div class="card-info">
+                                <h3>{{ mook["title"] }}</h3>
+                                <h4>{{ mook["author"] }}</h4>
+                                <p>{{ mook["description"]}}</p>
+                            </div>
+                            <div class="card-rating-quotes">
+                                <form action="/add_quote" method="/get">
+                                    <input type="hidden" value="{{ mook.title }}" name="title">
+                                    <input type="hidden" value="{{ mook.img }}" name="img">
+                                    <input type="hidden" value="{{ mook.type }}" name="type">
+                                    <button>Q</button>
+                                </form>
+                                <h3>{{ mook["rating"] }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                {% if mook["type"] == "movie" %}
+                    <div class="card movie movie-card" id="movie-card">
+                        <div class="card-content">
+                            <form action="/deletemook" method="post">
+                                <div class="delete">
+                                    <input type="hidden" value="{{ mook.id }}" name="qid">
+                                    <button class="delete-button movie-button">&#10005;</button>
+                                </div>
+                            </form>
+                            <div class="card-img">
+                                <img src="{{ mook.img }}" alt="">
+                            </div>
+                            <div class="card-info">
+                                <h3>{{ mook["title"] }}</h3>
+                                <h4>{{ mook["author"] }}</h4>
+                                <p>{{ mook["description"]}}</p>
+                            </div>
+                            <div class="card-rating-quotes">
+                                <form action="/add_quote" method="/get">
+                                    <input type="hidden" value="{{ mook.title }}" name="title">
+                                    <input type="hidden" value="{{ mook.img }}" name="img">
+                                    <input type="hidden" value="{{ mook.type }}" name="type">
+                                    <button>Q</button>
+                                </form>
+                                <h3>{{ mook["rating"] }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </main>
+
+    <{% block js %}
+        <script src="../static/js/buttons.js"></script>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,293 @@
+header {
+    background-color: #E2E0DE;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right bottom, #4091dc41, #6285d03e, #787ac032, #866faf5b, #87489e5a);
+}
+
+header h1 {
+    font-size: 3.125em;
+}
+
+.upp-buttons {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 12.5em;
+    margin: 0 auto;
+}
+
+.search-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 3.125em;
+    gap: 3.125em;
+}
+
+
+.search-bar input {
+    width: 56.25em;
+}
+
+
+.search-bar button {
+    height: 1.875em;
+    width: 4.375em;
+    background-color: #3e7ab2;
+    color: #E2E0DE;
+}
+
+.search-tools {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125em;
+    margin: 6.25em auto 1.875em auto;
+}
+
+.add button {
+    height: 2.5em;
+    width: 6.25em;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3.125em;
+    margin: 3.125em 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 64.3125em;
+    height: 22.5em;
+    border-radius: 10px;
+    background: #b4c3d1b3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.movie {
+    background: #b3a1bbbd; 
+}
+
+.card-content {
+    width: 56.25em;
+    height: 16.25em;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.card-img {
+    width: 8.75em;
+    height: 13.375em;
+}
+
+.card-img img {
+    width: 9.375em;
+    height: 13.375em;
+    border: 9px solid #000;
+    border-radius: 5px;
+}
+
+.card-info {
+    width: 31.25em;
+    height: 13.75em;
+    margin: 0 3.75em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.25em;
+
+}
+
+.card-rating-quotes {
+    width: 6.25em;
+    height: 13.75em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-rating-quotes button {
+    font-family: 'Courier New', Courier, monospace;
+    width: 3.125rem;
+    height: 3.125rem;
+    text-align: center;
+    font-size: 1.25em;
+    background-color: transparent;
+    border: 1px solid black;
+    margin-right: -0.625em;
+}
+
+.delete {
+    position: absolute;
+    height: 20em;
+    display: flex;
+    justify-content: start;
+    margin-left: -2.8125em;
+    margin-top: -10em;
+}
+
+.delete-button {
+    width: 1.875em;
+    height: 1.875em;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        width: 58.3125em;
+        height: 24.5em;
+    }
+
+    .card-content {
+        width: 46.25em;
+        height: 19.25em;
+    }
+
+    .search-bar {
+        flex-direction: column;
+    }
+
+    .delete {
+        margin-left: -5em;
+        margin-top: -11em;
+    }
+}
+
+@media (max-width: 993px) {
+    body {
+        font-size: 14px;
+    }
+
+    .search-bar .bar input{
+        width: 25em;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .delete {
+        margin-top: -12.5em;
+        margin-left: -1em;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+    .card {
+        width: 43.3125em;
+        height: 42.5em;
+    }
+    
+    .card-content {
+        flex-direction: column;
+        gap: 40px;
+        height: 36.25em;
+        text-align: center;
+        margin-top: -60px;
+    }
+
+    .card-info {
+        margin-top: 20px;
+    }
+
+    .card-info h3 {
+        font-size: 2em;
+    }
+
+    .card-info h4 {
+        font-size: 1.6em;
+    }
+
+    .card-rating-quotes {
+        width: 39.25em;
+        height: 0.75em;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card-rating-quotes button {
+        width: 2.8em;
+        height: 2.8em;
+    }
+
+    .card-rating-quotes h3 {
+        font-size: 2em;
+    }
+
+    .delete {
+        margin-top: 1em;
+        margin-left: -20em;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 10px;
+    }
+
+    .card {
+        height: 47.5em;
+    }
+
+    .add button {
+        height: 3.5em;
+        width: 9.25em;
+    }
+
+    .delete {
+        margin-top: -1em;
+        margin-left: -20em;
+    }
+
+    .delete-button {
+        width: 3em;
+        height: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 8px;
+    }
+
+    .card {
+        width: 33em;
+        height: 52em;
+    }
+
+    .card-rating-quotes {
+        width: 27.25em;
+    }
+
+    .delete {
+        margin-top: -2em;
+        margin-left: -15em;
+    }
+}

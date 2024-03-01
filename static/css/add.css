@@ -1,0 +1,173 @@
+.add-container {
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    margin: 6.25em 6.25em;
+}
+
+.add-container-book {
+    background: #b4c3d1b3;
+}
+
+.add-container-movie {
+    background: #b3a1bbbd;
+}
+
+.add-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 41.25em;
+    padding: 6.25em;
+    gap: 6.25em;
+}
+
+.add-heading h2{
+    font-size: 3.125em;
+}
+
+.add-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.add-info button {
+    width: 6.25em;
+    height: 2.5em;
+}
+
+.upload {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.875em;
+}
+
+.upload-img img {
+    width: 12.5em;
+    height: 19.3188em;
+    border: 3px solid black;
+}
+
+.add-info h5{
+    font-size: 0.9375em;
+    margin-top: 0.625rem;
+}
+
+.box {
+    margin: 2.5em 0;
+}
+
+.add-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.add-img input {
+    width: 25em;
+    height: 2.5em;
+}
+
+.show-img img{
+    width: 12.5em;
+    height: 18.75em;
+    border: 9px solid #000;
+    border-radius: 5px;
+}
+
+.title h2 {
+    font-size: 3.125em;
+}
+
+.title input{
+    width: 18.75rem;
+    height: 3.125rem;
+    font-size: 1.875em;
+}
+
+.rating input {
+    width: 6.25rem;
+    height: 3.125rem;
+    font-size: 1.875em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.down-buttons {
+    display: flex;
+    justify-content: right;
+    max-width: 59.375em;
+    margin-bottom: 5em;
+    gap: 6.25em;
+}
+
+.down-buttons .cancel {
+    border: 1px solid #000;
+    background: rgba(139, 152, 163, 0.09);
+}
+
+.addquote-content {
+    padding-bottom: 0;
+}
+
+.addquote-img {
+    height: 20.625em;
+}
+
+@media (max-width: 1200px) {
+    .down-buttons {
+        justify-content: center;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 8px;
+    }
+
+    .title input {
+        width: 12.75em;
+    }
+    
+    textarea {
+        width: 27.25em;
+        height: 20em;
+    }
+}
+
+@media (max-width: 377px) {
+    textarea {
+        width: 22em;
+        height: 27em;
+    }
+
+    .add-container{
+        background: none;
+        box-shadow: none;
+    }
+
+    .add-heading {
+        text-align: center;
+    }
+}

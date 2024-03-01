@@ -1,0 +1,93 @@
+body {
+    font-size: 16px;
+    font-family: "Nunito", sans-serif;
+    font-weight: bolder;
+}
+
+nav {
+    background-color: #E2E0DE;
+}
+
+.nav {
+    justify-content: right;
+    gap: 18.75em;
+    
+}
+
+.nav-item {
+    margin: 0 3.125em;
+}
+
+button{
+    width: 10.0625em;
+    height: 3.1875em;
+    border-radius: 3.125em;
+    background: #769cc0;
+    border: none;
+    font-weight: bold;
+}
+
+.display-nav-toggle {
+    width: 60px;
+    height: 50px;
+}
+
+button:focus {
+    outline: 0;
+}
+
+input {
+    background-color: #E2E0DE;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1.25em;
+}
+
+footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.footer-content h2{
+    margin: 2.5em auto;
+}
+
+textarea{
+    display: block;
+    width: 31.25em;
+    resize: none;
+    padding: 1.25em;
+    color: #202020;
+    background-color: #E2E0DE;
+    border: 1px solid black;
+    border-radius: 10px;
+    outline: none;
+}
+
+.movie-button {
+    background-color: #ab88bb;
+}
+
+.book {
+    background-color: #b4c3d1b3;
+}
+
+.movie {
+    background-color: #b3a1bbbd;
+}
+
+@media (max-width: 992px) {
+    .nav{
+        justify-content: center;
+        text-align: center;
+    }
+
+    .nav ul {
+        font-size: 20px;
+    }
+}

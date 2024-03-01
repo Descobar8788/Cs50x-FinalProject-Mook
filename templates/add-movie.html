@@ -1,0 +1,60 @@
+{% extends "main-layout.html" %}
+
+{% block title %}
+    Add Movie | Mook
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="../static/css/add.css">
+
+{% endblock %}
+
+{% block js %}
+
+    <script src="../static/js/textarea.js"></script>
+
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="add-container add-container-movie">
+            <form action="/add_movie" method="post">
+                <div class="add-content">
+                    <div class="add-heading">
+                        <h2>Add Movie</h2>
+                    </div>
+                    <div class="add-info">
+                        <div class="add-img">
+                            <h3>Add Cover</h3>
+                            <h5>Enter a valid image URL</h5>
+                            <input autocomplete="off" name="urlimage" type="text">
+                        </div>
+                        <div class="box title">
+                            <h3>Title</h3>
+                            <input autocomplete="off" name="title" type="text">
+                        </div>
+                        <div class="box author">
+                            <h3>Director</h3>
+                            <input autocomplete="off" name="director" type="text">
+                        </div>
+                        <div class="box description">
+                            <h3>Description</h3>
+                            <textarea rows="5" id="my-text" autocomplete="off" name="description" type="text"></textarea>
+                            <input id="talength" type="hidden" vale="" name="length">
+                            <p id="result"></p>
+                        </div>
+                        <div class="box rating">
+                            <h3>Rating</h3>
+                            <input autocomplete="off" name="rating" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="down-buttons">
+                    <button class="cancel" type="submit" formaction="/mymook" formmethod="get">CANCEL</button>
+                    <button class="movie-button" type="submit">CONFIRM</button>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}

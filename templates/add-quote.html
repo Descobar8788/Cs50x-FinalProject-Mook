@@ -1,0 +1,47 @@
+{% extends "main-layout.html" %}
+
+{% block title %}
+    Add Quote | Mook
+{% endblock %}
+
+{% block js %}
+
+    <script src="../static/js/textarea.js"></script>
+
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="../static/css/add.css">
+
+{% endblock %}
+
+{% block body %}
+    <main>
+        <div class="add-container addquote-container {{ type }}">
+            <form action="/add_quote" method="post">
+                <div class="add-content addquote-content">
+                    <div class="add-info addquote-info">
+                        <div class="box title">
+                            <h2>{{ title }}</h2>
+                        </div>
+                        <div class="show-img">
+                            <img src="{{ img }}" alt="">
+                        </div>
+                        <div class="box description">
+                            <h3>Quote</h3>
+                            <input type="hidden" value="{{ title }}" name="title">
+                            <textarea rows="5" id="my-text" autocomplete="off" name="quote" type="text"></textarea>
+                            <input id="talength" type="hidden" vale="" name="length">
+                            <p id="result"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="down-buttons">
+                    <button class="cancel" type="submit" formmethod="get" formaction="/mymook">CANCEL</button>
+                    <button type="submit">CONFIRM</button>
+                </div>
+            </form>
+        </div>
+    </main>
+{% endblock %}

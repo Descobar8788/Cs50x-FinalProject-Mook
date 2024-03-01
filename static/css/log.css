@@ -1,0 +1,13 @@
+.container-nav {
+    width: 100vw;
+    display: flex;
+    justify-content: right;
+}
+
+.container-nav a {
+    color: black;
+}
+
+nav {
+    background-color: white;
+}

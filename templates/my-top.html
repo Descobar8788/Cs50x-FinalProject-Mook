@@ -1,0 +1,72 @@
+{% extends "main-layout.html" %}
+
+{% block title %}
+    My Top | Mook
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="../static/css/top.css">
+
+{% endblock %}
+
+{% block header %}
+    <header>
+        <div class="header-content">
+            <div class="header-info">
+                <h1>My Top</h1>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <main>  
+        <div class="upp-buttons">
+            <button onClick="hide('movie-card', 'book-card', this.id, 'movies-select')" id="books-select">BOOKS</button>
+            <button onClick="hide('book-card', 'movie-card', this.id, 'books-select')" id="movies-select" class="movie-button">MOVIES</button>
+        </div>
+        <div id="cards" class="cards">
+            {% for t in top %}
+                {% if t["type"] == "book" %}
+                    <div class="card book book-card" id="book-card">
+                        <div class="card-content">
+                            <div class="card-rating-top">
+                                <h3>{{ t["rating"] }}</h3>
+                            </div>
+                            <div class="card-img">
+                                <img src="{{ t.img }}" alt="">
+                            </div>
+                            <div class="card-info">
+                                <h3>{{ t["title"] }}</h3>
+                                <h4>{{ t["author"] }}</h4>
+                            </div>
+                            
+                        </div>
+                    </div>
+                {% endif %}
+                {% if t["type"] == "movie" %}
+                    <div class="card movie movie-card" id="movie-card">
+                        <div class="card-content">
+                            <div class="card-rating-top">
+                                <h3>{{ t["rating"] }}</h3>
+                            </div>
+                            <div class="card-img">
+                                <img src="{{ t.img }}" alt="">
+                            </div>
+                            <div class="card-info">
+                                <h3>{{ t["title"] }}</h3>
+                                <h4>{{ t["author"] }}</h4>
+                            </div>
+                            
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </main>
+
+    {% block js %}
+        <script src="../static/js/buttons.js"></script>
+    {% endblock %}
+{% endblock %}

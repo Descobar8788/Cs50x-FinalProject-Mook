@@ -1,0 +1,70 @@
+{% extends "main-layout.html" %}
+
+{% block title %}
+Home | Mook
+{% endblock %}
+
+{% block css %}
+
+<link rel="stylesheet" href="../static/css/home.css">
+
+{% endblock %}
+
+{% block header %}
+<header>
+    <div class="header-content">
+        <div class="header-info">
+            <h1>Mook</h1>
+            <h4>Keep track of your entertainment media</h4>
+            <div class="header-button">
+                <button class="to-button" onclick="go_scroll('my-mook')">SEE MORE</button>
+            </div>
+        </div>
+        <div class="header-img">
+            <img src="../static/img/home-header.png" alt="">
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block body %}
+<main>
+    <div id="my-mook"></div>
+    <section>
+        <div class="main-info-content">
+            <div class="main-info-img">
+                <img src="../static/img/home-mymook.png" alt="">
+            </div>
+            <div class="main-info-info">
+                <h1>My Mook</h1>
+                <h4>Your personal place to keep track your books and movies, rate them and save your favorite quotes.
+                </h4>
+                <div class="header-button">
+                    <form action="/mymook">
+                        <button>ENTER NOW</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="qofday-content">
+            <h2>Your Quotes</h2>
+            <div class="qofday-box">
+                {% if quote == '"Add quotes"'%}
+                    <h3 class="qofday-p">{{ quote }}</h3>
+                {% else %}
+                    {% for q in quote %}
+                        <h3 class="qofday-p">{{ q["quote"] }}</h3>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+    <script>
+        function go_scroll(element_id) {
+            document.getElementById(element_id).scrollIntoView({behavior: "smooth"});
+        }        
+    </script>
+</main>
+{% endblock %}

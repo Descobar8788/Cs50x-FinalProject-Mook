@@ -1,0 +1,44 @@
+{% extends "log-layout.html" %}
+
+{% block title %}
+    Register | Mook
+{% endblock %}
+
+{% block nav_title %}
+    <a class="navbar-brand" href="/login">Log In</a>
+{% endblock %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="../static/css/register.css">
+
+{% endblock %}
+
+{% block body %}
+    <main>
+        <form action="/register" method="post">
+            <div class="register">
+                <div class="register-heading">
+                    <h2>REGISTER</h2>
+                </div>
+                <div class="register-info">
+                    <div class="register-user">
+                        <h3>USER</h3>
+                        <input autocomplete="off" name="user" type="text">
+                    </div>
+                    <div class="register-password">
+                        <h3>PASSWORD</h3>
+                        <input autocomplete="off" name="password" type="password">
+                    </div>
+                    <div class="register-password">
+                        <h3>CONFIRM</h3>
+                        <input autocomplete="off" name="confirm" type="password">
+                    </div>
+                </div>
+                <div class="register-button">
+                    <button type="submit">REGISTER</button>
+                </div>
+            </div>
+        </form>
+    </main>
+{% endblock %}

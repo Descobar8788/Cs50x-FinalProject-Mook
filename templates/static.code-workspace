@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "static",
+			"path": "../static"
+		},
+		{
+			"name": "templates",
+			"path": "."
+		},
+		{
+			"name": "Final Project 2",
+			"path": "../../Final Project 2"
+		}
+	],
+	"settings": {}
+}
